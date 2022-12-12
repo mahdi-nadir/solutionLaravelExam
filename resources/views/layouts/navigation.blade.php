@@ -20,6 +20,10 @@
                         {{ __('Question 1') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('question.3')" :active="request()->routeIs('question.3')">
+                        {{ __('Question 3') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

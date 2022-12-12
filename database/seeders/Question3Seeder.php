@@ -3,11 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Question3;
 use Illuminate\Database\Seeder;
-use Database\Seeders\UserSeeder;
-use Database\Seeders\Question3Seeder;
 
-class DatabaseSeeder extends Seeder
+class Question3Seeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -16,9 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            UserSeeder::class,
-            Question3Seeder::class,
-        ]);
+        Question3::factory(100)->create();
     }
 }

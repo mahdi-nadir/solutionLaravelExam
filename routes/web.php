@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Question1Controller;
+use App\Http\Controllers\Question3Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     // Question 1
     Route::get('/question-1', [Question1Controller::class, 'index'])->name('question.1');
+
+    // Question 3
+    Route::get('/question-3', [Question3Controller::class, 'index'])->name('question.3');
 
     // Laravel Breeze
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
