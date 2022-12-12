@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Question1Controller;
 use App\Http\Controllers\Question3Controller;
+use App\Http\Controllers\Question4Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ Route::middleware('auth')->group(function () {
 
     // Question 3
     Route::get('/question-3', [Question3Controller::class, 'index'])->name('question.3');
+
+    // Question 4
+    Route::get('/question-4', [Question4Controller::class, 'create'])->name('question.4.create');
+    Route::post('/question-4', [Question4Controller::class, 'store'])->name('question.4.store');
 
     // Laravel Breeze
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
