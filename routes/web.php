@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Question1Controller;
 use App\Http\Controllers\Question3Controller;
 use App\Http\Controllers\Question4Controller;
+use App\Http\Controllers\Question5Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Question 5
+Route::get('/question-5', [Question5Controller::class, 'index'])->name('question.5');
 
 Route::middleware('auth')->group(function () {
     // Question 1
