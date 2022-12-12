@@ -29,6 +29,11 @@ Route::get('/dashboard', function () {
 // Question 5
 Route::get('/question-5', [Question5Controller::class, 'index'])->name('question.5');
 
+// Question 6
+Route::get('/question-6', function () {
+    return view('questions.6');
+})->name('question.6');
+
 Route::middleware('auth')->group(function () {
     // Question 1
     Route::get('/question-1', [Question1Controller::class, 'index'])->name('question.1');
