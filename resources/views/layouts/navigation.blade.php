@@ -36,6 +36,9 @@
                         {{ __('Question 6') }}
                     </x-nav-link>
 
+                    <x-nav-link :active="request()->routeIs('question.7')">
+                        {{ __('Question 7') }}
+                    </x-nav-link>
                 </div>
             </div>
 
