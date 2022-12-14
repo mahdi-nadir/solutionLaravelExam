@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <!-- Affichez Oui ou Non selon si l'utilisateur est authentifié -->
             <!-- Replacez false par la bonne valeur -->
-            Authentifié: {{ false ? 'Oui' : 'Non' }}
+            {{-- reference: https://stackoverflow.com/questions/37355733/how-to-check-if-user-is-connected-in-view-laravel --}}
+            Authentifié: {{ (Auth::check()) ? 'Oui' : 'Non' }} 
         </div>
     </div>
 </x-guest-layout>

@@ -13,6 +13,13 @@ class Question5Controller extends Controller
         $current = Carbon::now();
         // Pour avoir l'heure actuelle, on utilise les propriétés de l'objet Carbon
         // Supprimez la ligne dd() ci-dessous et ajouter votre code par la suite
-        dd($current->hour, $current->minute, $current->second);
+        // dd($current->hour, $current->minute, $current->second);
+        if ($current->hour >= 00 && $current->hour < 12) {
+            return view('questions.5.matin');
+        } elseif ($current->hour >= 12 && $current->hour < 20) {
+            return view('questions.5.jour');
+        } else {
+            return view('questions.5.soir');
+        }
     }
 }

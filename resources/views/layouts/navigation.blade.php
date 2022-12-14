@@ -16,27 +16,29 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('question.1')" :active="request()->routeIs('question.1')">
-                        {{ __('Question 1') }}
-                    </x-nav-link>
+                    @can('super-admin')
+                        <x-nav-link :href="route('question.1')" :active="request()->routeIs('question.1')">
+                            {{ __('Question 1') }}
+                        </x-nav-link>
+                    @endcan
 
-                    <x-nav-link :href="route('question.3')" :active="request()->routeIs('question.3')">
+                    <x-nav-link :href="route('question.3', ['lang' => app()->getLocale()])" :active="request()->routeIs('question.3')">
                         {{ __('Question 3') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('question.4.create')" :active="request()->routeIs('question.4.create')">
+                    <x-nav-link :href="route('question.4.create', ['lang' => app()->getLocale()])" :active="request()->routeIs('question.4.create')">
                         {{ __('Question 4') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('question.5')" :active="request()->routeIs('question.5')">
+                    <x-nav-link :href="route('question.5', ['lang' => app()->getLocale()])" :active="request()->routeIs('question.5')">
                         {{ __('Question 5') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('question.6')" :active="request()->routeIs('question.6')">
+                    <x-nav-link :href="route('question.6', ['lang' => app()->getLocale()])" :active="request()->routeIs('question.6')">
                         {{ __('Question 6') }}
                     </x-nav-link>
 
-                    <x-nav-link :active="request()->routeIs('question.7')">
+                    <x-nav-link :href="route('question.7', ['lang' => app()->getLocale()])" :active="request()->routeIs('question.7')">
                         {{ __('Question 7') }}
                     </x-nav-link>
                 </div>

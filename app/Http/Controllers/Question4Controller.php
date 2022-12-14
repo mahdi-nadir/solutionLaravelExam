@@ -14,6 +14,15 @@ class Question4Controller extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'foo' => 'required|numeric',
+            'bar' => 'required|max:42',
+            'baz' => 'required|date',
+            'qux' => 'required|max:1000',
+        ]);
+
+        Question4::create($request->all());
+
         return redirect()
             ->route('question.4.create')
             ->with('success', 'Created successfully.');
